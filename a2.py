@@ -65,7 +65,6 @@ def contains_sequence(dna1, dna2):
     True
     >>> contains_sequence('ATCGGC', 'GT')
     False
-
     """
 
     return dna2 in dna1
@@ -73,3 +72,31 @@ def contains_sequence(dna1, dna2):
 
 # print(contains_sequence('ATCGGC', 'GG'))
 # print(contains_sequence('ATCGGC', 'GT'))
+
+
+def is_valid_sequence(sequence):
+	""" (str) -> bool
+
+	Return True if and only if the DNA sequence is valid (that is, it contains
+	no characters other than 'A', 'T', 'C' and 'G').
+
+	>>> is_valid_sequence("CTG")
+	True
+	>>> is_valid_sequence("ACGTACG")
+	True
+	>>> is_valid_sequence("GGGGGG")
+	True
+	>>> is_valid_sequence("tGCtAG")
+	False
+	"""
+
+	for char in sequence:
+		if char not in "ATCG":
+			return False
+	return True		
+
+
+# print(is_valid_sequence("CTG"))
+# print(is_valid_sequence("ACGTACG"))
+# print(is_valid_sequence("GGGGGG"))
+# print(is_valid_sequence("tGCtAG"))
