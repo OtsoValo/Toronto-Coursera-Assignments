@@ -80,23 +80,46 @@ def is_valid_sequence(sequence):
 	Return True if and only if the DNA sequence is valid (that is, it contains
 	no characters other than 'A', 'T', 'C' and 'G').
 
-	>>> is_valid_sequence("CTG")
+	>>> is_valid_sequence('CTG')
 	True
-	>>> is_valid_sequence("ACGTACG")
+	>>> is_valid_sequence('ACGTACG')
 	True
-	>>> is_valid_sequence("GGGGGG")
+	>>> is_valid_sequence('GGGGGG')
 	True
-	>>> is_valid_sequence("tGCtAG")
+	>>> is_valid_sequence('tGCtAG')
 	False
 	"""
 
 	for char in sequence:
-		if char not in "ATCG":
+		if char not in 'ATCG':
 			return False
 	return True		
 
 
-# print(is_valid_sequence("CTG"))
-# print(is_valid_sequence("ACGTACG"))
-# print(is_valid_sequence("GGGGGG"))
-# print(is_valid_sequence("tGCtAG"))
+# print(is_valid_sequence('CTG'))
+# print(is_valid_sequence('ACGTACG'))
+# print(is_valid_sequence('GGGGGG'))
+# print(is_valid_sequence('tGCtAG'))
+
+
+def insert_sequence(dna1, dna2, index):
+	""" (str, str, int) -> str
+
+	Return the DNA sequence obtained by inserting the second DNA sequence into
+	the first DNA sequence at the given index. (You can assume that the index
+	is valid.)
+
+	>>> insert_sequence('TCG', 'A', 0)
+	'ATCG'
+	>>> insert_sequence('CCGG', 'AT', 2)
+	'CCATGG'
+	>>> insert_sequence('GGG', 'TTT', 3)
+	'GGGTTT'
+	"""
+
+	return dna1[:index] + dna2 + dna1[index:]
+
+
+# print(insert_sequence('TCG', 'A', 0))
+# print(insert_sequence('CCGG', 'AT', 2))
+# print(insert_sequence('GGG', 'TTT', 3))
