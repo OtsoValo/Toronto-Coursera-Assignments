@@ -123,3 +123,34 @@ def insert_sequence(dna1, dna2, index):
 # print(insert_sequence('TCG', 'A', 0))
 # print(insert_sequence('CCGG', 'AT', 2))
 # print(insert_sequence('GGG', 'TTT', 3))
+
+
+def get_complement(nucleotide):
+	""" (str) -> str
+
+	The first parameter is a nucleotide ('A', 'T', 'C', or 'G'). Return the
+	nucleotide's complement.
+
+	>>> get_complement('A')
+	'T'
+	>>> get_complement('T')
+	'A'
+	>>> get_complement('C')
+	'G'
+	>>> get_complement('G')
+	'C'
+	"""
+
+	if nucleotide == 'A':
+		return 'T'
+	elif nucleotide == 'T':
+		return 'A'
+	elif nucleotide == 'C':
+		return 'G'
+	return 'C'
+
+
+# print(get_complement('A'))
+# print(get_complement('T'))
+# print(get_complement('C'))
+# print(get_complement('G'))
