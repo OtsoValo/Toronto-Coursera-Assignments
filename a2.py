@@ -154,3 +154,28 @@ def get_complement(nucleotide):
 # print(get_complement('T'))
 # print(get_complement('C'))
 # print(get_complement('G'))
+
+
+def get_complementary_sequence(sequence):
+	""" (str) -> str
+
+	The parameter is a DNA sequence. Return the DNA sequence that is
+	complementary to the given DNA sequence.
+
+	>>> get_complementary_sequence('AT')
+	'TA'
+	>>> get_complementary_sequence('ACGTACG')
+	'TGCATGC'
+	>>> get_complementary_sequence('AAAAA')
+	'TTTTT'
+	"""
+
+	comp_seq = ''
+	for char in sequence:
+		comp_seq += get_complement(char)
+	return comp_seq
+
+
+# print(get_complementary_sequence('AT'))
+# print(get_complementary_sequence('ACGTACG'))
+# print(get_complementary_sequence('AAAAA'))
