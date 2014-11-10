@@ -14,10 +14,6 @@ def get_length(dna):
     return len(dna)
 
 
-# print(get_length('ATCGAT'))
-# print(get_length('ATCG'))
-
-
 def is_longer(dna1, dna2):
     """ (str, str) -> bool
 
@@ -31,10 +27,6 @@ def is_longer(dna1, dna2):
     """
 
     return len(dna1) > len(dna2)
-
-
-# print(is_longer('ATCG', 'AT'))
-# print(is_longer('ATCG', 'ATCGGA'))
 
 
 def count_nucleotides(dna, nucleotide):
@@ -51,10 +43,6 @@ def count_nucleotides(dna, nucleotide):
     return dna.count(nucleotide)
 
 
-# print(count_nucleotides('ATCGGC', 'G'))
-# print(count_nucleotides('ATCTA', 'G'))
-
-
 def contains_sequence(dna1, dna2):
     """ (str, str) -> bool
 
@@ -68,10 +56,6 @@ def contains_sequence(dna1, dna2):
     """
 
     return dna2 in dna1
-
-
-# print(contains_sequence('ATCGGC', 'GG'))
-# print(contains_sequence('ATCGGC', 'GT'))
 
 
 def is_valid_sequence(sequence):
@@ -96,12 +80,6 @@ def is_valid_sequence(sequence):
 	return True		
 
 
-# print(is_valid_sequence('CTG'))
-# print(is_valid_sequence('ACGTACG'))
-# print(is_valid_sequence('GGGGGG'))
-# print(is_valid_sequence('tGCtAG'))
-
-
 def insert_sequence(dna1, dna2, index):
 	""" (str, str, int) -> str
 
@@ -118,11 +96,6 @@ def insert_sequence(dna1, dna2, index):
 	"""
 
 	return dna1[:index] + dna2 + dna1[index:]
-
-
-# print(insert_sequence('TCG', 'A', 0))
-# print(insert_sequence('CCGG', 'AT', 2))
-# print(insert_sequence('GGG', 'TTT', 3))
 
 
 def get_complement(nucleotide):
@@ -150,12 +123,6 @@ def get_complement(nucleotide):
 	return 'C'
 
 
-# print(get_complement('A'))
-# print(get_complement('T'))
-# print(get_complement('C'))
-# print(get_complement('G'))
-
-
 def get_complementary_sequence(sequence):
 	""" (str) -> str
 
@@ -174,8 +141,3 @@ def get_complementary_sequence(sequence):
 	for char in sequence:
 		comp_seq += get_complement(char)
 	return comp_seq
-
-
-# print(get_complementary_sequence('AT'))
-# print(get_complementary_sequence('ACGTACG'))
-# print(get_complementary_sequence('AAAAA'))
