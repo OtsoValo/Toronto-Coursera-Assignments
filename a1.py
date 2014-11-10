@@ -19,12 +19,6 @@ def seconds_difference(time_1, time_2):
     return time_2 - time_1
 
 
-# print(seconds_difference(1800.0, 3600.0))
-# print(seconds_difference(3600.0, 1800.0))
-# print(seconds_difference(1800.0, 2160.0))
-# print(seconds_difference(1800.0, 1800.0))
-
-
 def hours_difference(time_1, time_2):
     """ (number, number) -> float
 
@@ -44,12 +38,6 @@ def hours_difference(time_1, time_2):
     return (time_2 - time_1) / 3600
 
 
-# print(hours_difference(1800.0, 3600.0))
-# print(hours_difference(3600.0, 1800.0))
-# print(hours_difference(1800.0, 2160.0))
-# print(hours_difference(1800.0, 1800.0))
-
-
 def to_float_hours(hours, minutes, seconds):
     """ (int, int, int) -> float
 
@@ -67,11 +55,6 @@ def to_float_hours(hours, minutes, seconds):
     """
 
     return hours + (minutes / 60) + (seconds / 3600)
-
-
-# print(to_float_hours(0, 15, 0))
-# print(to_float_hours(2, 45, 9))
-# print(to_float_hours(1, 0, 36))
 
 
 def to_24_hour_clock(hours):
@@ -95,13 +78,6 @@ def to_24_hour_clock(hours):
     """
 
     return hours % 24
-
-
-# print(to_24_hour_clock(24))
-# print(to_24_hour_clock(48))
-# print(to_24_hour_clock(25))
-# print(to_24_hour_clock(4))
-# print(to_24_hour_clock(28.5))
 
 
 def get_hours(seconds):
@@ -130,14 +106,6 @@ def get_hours(seconds):
     return (seconds // 3600) % 24
 
 
-# print(get_hours(3599))
-# print(get_hours(3600))
-# print(get_hours(3800))
-# print(get_hours(8000))
-# print(get_hours(86399))
-# print(get_hours(86400))
-
-
 def get_minutes(seconds):
     """ (int) -> int
 
@@ -164,14 +132,6 @@ def get_minutes(seconds):
     return (seconds // 60) % 60
 
 
-# print(get_minutes(59))
-# print(get_minutes(60))
-# print(get_minutes(119))
-# print(get_minutes(120))
-# print(get_minutes(3599))
-# print(get_minutes(3600))
-
-
 def get_seconds(seconds):
     """ (int) -> int
 
@@ -196,14 +156,6 @@ def get_seconds(seconds):
     return seconds % 60
 
 
-# print(get_seconds(59))
-# print(get_seconds(60))
-# print(get_seconds(74))
-# print(get_seconds(120))
-# print(get_seconds(121))
-# print(get_seconds(3800))
-
-
 def time_to_utc(utc_offset, time):
     """ (number, float) -> float
 
@@ -225,14 +177,6 @@ def time_to_utc(utc_offset, time):
     """
 
     return to_24_hour_clock(time - utc_offset)
-
-
-# print(time_to_utc(+0, 12.0))
-# print(time_to_utc(+1, 12.0))
-# print(time_to_utc(-1, 12.0))
-# print(time_to_utc(-11, 18.0))
-# print(time_to_utc(-1, 0.0))
-# print(time_to_utc(-1, 23.0))
 
 
 def time_from_utc(utc_offset, time):
@@ -259,13 +203,3 @@ def time_from_utc(utc_offset, time):
     """
 
     return to_24_hour_clock(time + utc_offset)
-
-
-# print(time_from_utc(+0, 12.0))
-# print(time_from_utc(+1, 12.0))
-# print(time_from_utc(-1, 12.0))
-# print(time_from_utc(+6, 6.0))
-# print(time_from_utc(-7, 6.0))
-# print(time_from_utc(-1, 0.0))
-# print(time_from_utc(-1, 23.0))
-# print(time_from_utc(+1, 23.0))
